@@ -1,23 +1,27 @@
 #include <stdio.h>
-
+int power(int , int ) ;
 int main()
 {
-int n=3, s;
-
-s = sum(n);
-printf(" Sum of three digit=%d",s);
-return 0;
+    int x, y, result;
+    printf("Enter x number: ");
+    scanf("%d", &x);
+    printf("Enter power number y: ");
+    scanf("%d", &y);
+    result = power(x, y);
+    printf("power= %d",  result);
+    return 0;
 }
 
-int sum(int n) 
+int power(int x, int y) 
 {
-int s=0;
-if (n== 0)
-return 0;
-else
-{
-s= s * sum(n-1);
-return s;
+    int result;
+    if (y== 0)
+    return 1;
+    else
+    {
+        result= (x * power(x, y - 1));
+        return result;
+    }
 }
 
 
